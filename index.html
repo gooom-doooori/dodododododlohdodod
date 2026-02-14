@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>로오히 메인트</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="로오히 자기소개표">
+    <meta property="og:description" content="아발론의 영광을 위하여.">
+    <meta property="og:image" content="img/thumbnail.png">
+    <meta property="og:url" content=" ">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="로오히 자기소개표">
+    <meta name="twitter:description" content="아발론의 영광을 위하여.">
+    <meta name="twitter:image" content="img/thumbnail.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="main-title">
+            <span>로오히 자기소개표</span>
+            <div class="pulple">
+              <img class="arrwo1" src="img/arrow_p.png">
+              <img class="arrwo2" src="img/arrow_p.png">
+              <img class="flower" src="img/flower_p.png">
+              <img class="star1" src="img/star_p.png">
+              <img class="star2" src="img/star_p.png">
+            </div>
+            <div class="green">
+              <img class="arrwo1" src="img/arrow_g.png">
+              <img class="arrwo2" src="img/arrow_g.png">
+              <img class="flower" src="img/flower_g.png">
+              <img class="star1" src="img/star_g.png">
+              <img class="star2" src="img/star_g.png">
+            </div>
+        </div>
+        <div class="sub-title">
+          <span>#아발론의_영광을_위하여 #응_나_못떠나 #아니_안떠나</span>
+          <img class="pulple" src="img/ribon_p.png">
+          <img class="green" src="img/ribon_g.png">
+        </div>
+        <div class="content">
+          <div class="left">
+            <div class="profile">
+                <div class="pro_img">
+                  <img id="profileImage" src="img/proimg_p.png" alt="프로필 이미지">
+                  <div class="pro_img_buttons">
+                    <button id="toggleTheme">로드 변경</button>
+                    <button id="changeImage">인장 변경</button>
+                  </div>
+                  <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+                <div class="Introduce">
+                  <div class="name">
+                  로드명: <input type="text" placeholder="닉네임 입력" autocomplete="off">
+                  </div>
+                  <span class="line">로드 한마디</span>
+                  <div class="speech_bubble">
+                    <span class="quotes_top">❝</span>
+                    <textarea id="speechInput" placeholder="한마디 입력" rows="1" autocomplete="off"></textarea>
+                    <span class="quotes_bottom">❞</span>
+                  </div>
+                </div>
+            </div>
+            <div class="profile-elements">
+              <span class="pulple">
+                <img src="img/club_p.png">
+              </span>
+              <span class="green">
+                <img src="img/club_g.png">
+              </span>
+              <span>상태</span>
+              <div class="select-setion">
+                <button class="unselect">뉴비</button>
+                <button class="unselect">복귀</button>
+                <button class="unselect">현직</button>
+              </div>
+              <span>로드</span>
+            </div>
+            <div class="profile-elements">
+              <span class="pulple">
+                <img src="img/club_p.png">
+              </span>
+              <span class="green">
+                <img src="img/club_g.png">
+              </span>
+              <div class="level-section">
+                <span>로드 레벨</span>
+                <div class="level">
+                <input type="number" placeholder="숫자만 입력" autocomplete="off"><span>.LV</span>
+                </div>
+              </div>
+            </div>
+            <div class="profile-elements">
+              <span class="pulple">
+                <img src="img/club_p.png">
+              </span>
+              <span class="green">
+                <img src="img/club_g.png">
+              </span>
+              <span>연합명</span>
+              <input type="text" id="union-name" placeholder="연합명 입력" autocomplete="off">
+              <span id="union-suffix" style="display:none;">연합</span>
+              <div class="select-setion" id="union">
+                <button class="unselect">비공개</button>
+                <button class="unselect">구직중</button>
+              </div>
+            </div>
+            <div class="profile-elements">
+              <div class="elements-title">관심 분야</div>
+                <div class="select-setion" id="ability">
+                    <button class="unselect">글</button>
+                    <button class="unselect">그림</button>
+                    <button class="unselect">영상</button>
+                    <button class="unselect">분석</button>
+                    <button class="unselect">소비</button>
+                    <button class="unselect">코스프레</button>
+                    <button class="unselect">굿즈</button>
+                    <button class="unselect">게임플레이</button>
+                    <button class="unselect">기타 <input type="text" placeholder="관심 분야 입력" autocomplete="off"></button>
+                </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="profile-elements hero-section">
+              <div class="elements-title">최애 영웅</div>
+              <div class="placehold">최대 4명 선택</div>
+              <div class="selected-heroes">
+                <button class="add-hero-btn">+</button>
+              </div>
+              <div class="hero-dropdown" style="display: none;">
+                <!-- JavaScript로 동적 생성 -->
+              </div>
+            </div>
+            <div class="profile-elements couple-section">
+              <div class="elements-title">최애 조합/CP</div>
+              <div class="placehold">최대 세 조합 입력 / 가운데 아이콘을 클릭하면 하트모양이 됨</div>
+              <div class="selected-couples">
+                  <button class="add-couple-btn">+</button>
+              </div>
+              <div class="couple-dropdown" style="display: none;">
+                  <!-- JavaScript로 동적 생성 -->
+              </div>
+            </div>
+          </div>
+          <div class="deco">
+            <div class="pulple">
+              <span class="deco-left">
+                <img src="img/spacle.png">
+                <img src="img/club_p_l.png">
+                <img src="img/spacle.png">
+              </span>
+              <img src="img/clip_p.png">
+              <span class="deco-rigth">
+                <img src="img/spacle.png">
+                <img src="img/club_p_l.png">
+                <img src="img/spacle.png">
+              </span>
+            </div>
+            <div class="green">
+              <span class="deco-left">
+                <img src="img/spacle.png">
+                <img class="club" src="img/club_g_l.png">
+                <img src="img/spacle.png">
+              </span>
+              <img src="img/clip_g.png">
+              <span class="deco-rigth">
+                <img src="img/spacle.png">
+                <img class="club" src="img/club_g_l.png">
+                <img src="img/spacle.png">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="logo">
+          <div class="pulple">
+            <img src="img/title_p.png">
+          </div>
+          <div class="green">
+            <img src="img/title_g.png">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="saveImageBtn">
+        <i class="fas fa-download"></i>
+        <span>이미지로 저장</span>
+      </button>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </body>
+</html>

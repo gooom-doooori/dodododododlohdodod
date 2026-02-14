@@ -1,0 +1,1026 @@
+@font-face {
+    font-family: 'KohiLearn';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/KOHIBaeumOTF.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pyeongchang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pyeongchang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HsSantoki';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:not(input):not(textarea) {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+:root {
+    --bg-color: #F7FAA4;
+    --bg-image: url('img/bg_p.png');
+    --primary-color: #A083FF;
+    --primary-tran-color: #A083FF8e;
+    --point-color: #e283ff;
+    --button-active: #c0a7ff83;
+    --title-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-repeat: repeat;
+    background-size: 8%;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+body.green-theme {
+    --bg-color: #FAA4D4;
+    --bg-image: url('img/bg_g.png');
+    --primary-color: #1AAC73;
+    --primary-tran-color: #1AAC738e;
+    --point-color: #31cf4b;
+    --button-active: #4fdaa283;
+    --title-color: #FFD11A;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    padding: 30px;
+    width: 1200px;
+    border: 6px solid var(--point-color);
+    overflow: hidden;
+    padding-bottom: 5px;
+    margin: 20px;
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-repeat: repeat;
+    background-size: 17%;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+button {
+    font-size: 15pt;
+    padding: 3px 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Main Title */
+.main-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 5px;
+    height: 100px;
+    color: var(--title-color);
+    text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black, 0px -2px 0 black;
+}
+
+.main-title > span {
+    position: relative;
+    z-index: 10;
+    font-size: 4em;
+    letter-spacing : 6px;
+    font-family: 'HsSantoki';
+}
+
+.main-title .pulple,
+.main-title .green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-title .green {
+    display: none;
+}
+
+body.green-theme .main-title .pulple {
+    display: none;
+}
+
+body.green-theme .main-title .green {
+    display: block;
+}
+
+.main-title img {
+    position: absolute;
+}
+
+.main-title .arrwo1 {
+    width: 100px;
+    top: -55px;
+    left: 13%;
+}
+
+.main-title .arrwo2 {
+    width: 100px;
+    top: 60px;
+    right: 14%;
+    transform: rotate(180deg);
+    z-index: 0;
+}
+
+.main-title .flower {
+    width: 25px;
+    top: 19px;
+    left: 24.5%;
+}
+
+.main-title .star1 {
+    width: 40px;
+    top: -13px;
+    left: 26.5%;
+}
+
+.main-title .star2 {
+    width: 30px;
+    top: 25px;
+    right: 24.5%;
+}
+
+/* Sub Title */
+.sub-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: -40px;
+    height: 60px;
+    color: white;
+}
+
+.sub-title span {
+    position: relative;
+    z-index: 10;
+    bottom: 18px;
+    font-size: 1.2em;
+}
+
+.sub-title img {
+    position: absolute;
+    width: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+}
+
+.sub-title .green {
+    display: none;
+}
+
+.sub-title .pulple {
+    display: inline;
+}
+
+body.green-theme .sub-title .pulple {
+    display: none;
+}
+
+body.green-theme .sub-title .green {
+    display: inline;
+}
+
+/* Content */
+.content {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #fafafa;
+    border: 2px solid black;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    z-index: 30;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    font-family: "Pyeongchang";
+    font-size: 12pt;
+    forced-color-adjust: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.left,
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-elements{
+    font-family: KohiLearn;
+}
+
+button {
+    font-family: "Pyeongchang";
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Profile Image */
+.pro_img {
+    position: relative;
+    width: 170px;
+    height: 230px;
+    background-color: var(--primary-color);
+    border: 2px solid black;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pro_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pro_img_buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 20;
+}
+
+.pro_img:hover .pro_img_buttons {
+    display: flex;
+}
+
+.pro_img_buttons button {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12pt;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    overflow-wrap: break-word;
+    min-width: 130px;
+}
+
+.pro_img_buttons button:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Profile Info */
+.profile > div:not(.pro_img) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.name,
+.Introduce {
+    font-size: 1.1em;
+    font-family: 'KohiLearn';
+}
+
+.name input {
+    padding: 8px;
+    border: none;
+    background: transparent;
+    margin-left: 10px;
+    flex: 1;
+    outline: none;
+}
+
+.Introduce input {
+    padding: 8px;
+    margin-left: 10px;
+    flex: 1;
+}
+
+.speech_bubble {
+    position: relative;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 30px;
+}
+
+.quotes_top,
+.quotes_bottom {
+    margin: 9px 0 9px 0;
+    position: absolute;
+    font-size: 2em;
+}
+
+.quotes_top {
+    top: -10px;
+    left: 10px;
+}
+
+.quotes_bottom {
+    bottom: -10px;
+    right: 10px;
+}
+
+.speech_bubble textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    text-align: center;
+    resize: none;
+    overflow: hidden;
+    min-height: 1.5em;
+    font-family: "Pyeongchang";
+}
+
+/* Profile Elements */
+.profile-elements {
+    padding: 15px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 15pt;
+}
+
+.profile-elements > span.pulple,
+.profile-elements > span.green {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.profile-elements > span.pulple img,
+.profile-elements > span.green img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-elements > span.green {
+    display: none;
+}
+
+body.green-theme .profile-elements > span.pulple {
+    display: none;
+}
+
+body.green-theme .profile-elements > span.green {
+    display: inline-block;
+}
+
+.profile-elements input[type="text"],
+.profile-elements input[type="number"] {
+    padding: 8px;
+    max-width: fit-content;
+    flex: 1;
+    outline: none;
+    border-radius: 0;
+}
+
+.profile-elements input{
+    font-family: 'Pyeongchang';
+}
+
+.profile-elements #union-name {
+    font-family: 'KohiLearn' !important;
+}
+
+.left .profile-elements input {
+    max-width: 200px;
+    text-align: right;
+    font-size: 15pt !important;
+}
+
+.left .profile-elements input[type="number"] {
+    max-width: 170px;
+    font-family: 'KohiLearn' !important;
+}
+
+.left .select-setion {
+    flex-wrap: nowrap;
+    width: auto;
+}
+
+#union button {
+    padding: 2px 3px;
+}
+
+.left .profile-elements {
+    height: 50px;
+}
+
+.left .profile-elements:last-child {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-elements span {
+    margin-top: 3px;
+}
+
+.level-section {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+#ability {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+#ability button:last-child {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+#ability :last-child:not(input){
+    padding-left: 40px;
+}
+
+.left .profile-elements:has(#ability) {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#ability button {
+    padding: 3px 5px;
+}
+
+/* Select Section */
+.select-setion {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+.select-setion button {
+    font-size: 15pt;
+    padding: 3px 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-setion button:hover {
+    background: var(--button-active);
+}
+
+.select-setion button.selected {
+    background: var(--primary-tran-color);
+    color: white;
+}
+
+body.green-theme .select-setion button.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.select-setion button input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 350px;
+    border-bottom: 1px solid transparent;
+    text-align: left !important;
+    color: white;
+}
+
+.select-setion button input:placeholder-shown {
+    border-bottom: 1px solid #ccc;
+}
+
+.select-setion button input:focus {
+    border-bottom: 1px solid #999;
+}
+
+/* 요소 제목 */
+.elements-title {
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.placehold {
+    font-family: "Pyeongchang";
+    font-size: 13pt;
+    color: #00000048;
+    width: 100%;
+}
+
+.right .profile-elements {
+    flex-direction: row;
+    justify-content: left;
+}
+
+.right .profile-elements .elements-title,
+.right .profile-elements .placehold {
+    width: auto;
+}
+
+/* Deco */
+.deco {
+    z-index: 200;
+    pointer-events: none;
+}
+
+.deco > .pulple,
+.deco > .green {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deco > .green {
+    display: none;
+}
+
+body.green-theme .deco > .pulple {
+    display: none;
+}
+
+body.green-theme .deco > .green {
+    display: flex;
+}
+
+.deco-left {
+        position: absolute;
+    bottom: 80%;
+    left: -17px;
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.deco-rigth {
+    position: absolute;
+    bottom: 70px;
+    right: -18px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.deco img {
+    height: 30px;
+}
+
+.deco-left img[src*="club"],
+.deco-rigth img[src*="club"] {
+    height: 18px;
+}
+
+.deco-left img[src*="spacle"],
+.deco-rigth img[src*="spacle"] {
+    height: 35px;
+}
+
+.deco > .pulple > img[src*="clip"],
+.deco > .green > img[src*="clip"] {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    height: 80px;
+}
+
+/* 로고 */
+.logo {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.logo .pulple,
+.logo .green {
+    display: inline-block;
+}
+
+.logo .green {
+    display: none;
+}
+
+body.green-theme .logo .pulple {
+    display: none;
+}
+
+body.green-theme .logo .green {
+    display: inline-block;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.hero-section {
+    flex-direction: column;
+}
+
+.selected-heroes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 180px;
+}
+
+.add-hero-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.hero-card.adding {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.hero-card.removing {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.remove-hero-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.hero-card:hover .remove-hero-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hero-card img {
+    height: 80px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.hero-name {
+    font-size: 14px;
+}
+
+.element-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    width: 100px;
+}
+
+.element-btn:nth-child(4),
+.element-btn:nth-child(5) {
+    margin: 0 auto;
+}
+
+.element-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: all 0.3s;
+}
+
+.element-btn:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+.element-btn.active {
+    filter: grayscale(0%);
+}
+.hero-dropdown {
+    position: absolute;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    z-index: 1000;
+    top: 170px;
+}
+
+.hero-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero-option:hover {
+    background: #f0f0f0;
+}
+
+.hero-option img {
+    height: 40px;
+    width: auto;
+}
+
+.couple-section {
+    flex-direction: column;
+}
+
+.selected-couples {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.add-couple-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.couple-selector {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+    position: relative;
+    transform: scaleY(1);
+    opacity: 1;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.couple-selector.adding {
+    transform: scaleY(0);
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.couple-selector.removing {
+    transform: scaleY(0);
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.couple-hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    position: relative;
+}
+
+.couple-hero-label {
+    font-size: 14px;
+}
+
+.couple-hero-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-height: 80px;
+}
+
+.select-couple-hero {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.couple-hero-display img {
+    height: 80px;
+    width: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.couple-hero-name {
+    font-size: 15px;
+}
+
+.couple-hero-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    z-index: 1000;
+    width: 250px;
+    margin-top: 5px;
+}
+
+.couple-hero-dropdown .hero-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'KohiLearn';
+}
+
+.couple-hero-dropdown .hero-option:hover {
+    background: #f0f0f0;
+}
+
+.couple-hero-dropdown .hero-option img {
+    height: 40px;
+    width: auto;
+}
+
+.couple-icon-btn {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    border-radius: 10px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd700;
+}
+
+.couple-icon-btn.heart {
+    color: #ff69b4;
+}
+
+.couple-icon-btn.heart:hover {
+    color: #ffd700;
+}
+
+.couple-icon-btn:hover {
+    transform: scale(1.1);
+    color: #ff69b4;
+}
+
+.remove-couple-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.couple-selector:hover .remove-couple-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#saveImageBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 20px;
+    padding: 12px 28px;
+    background: var(--point-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#saveImageBtn:hover {
+    transform: translateY(-2px);
+    background: var(--primary-color);
+}
+#saveImageBtn:active {
+    transform: translateY(0px);
+}
+#saveImageBtn i {
+    font-size: 14px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+}
+.couple-hero-dropdown .hero-search {
+    outline: none;
+}
