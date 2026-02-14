@@ -220,6 +220,7 @@ body.green-theme .sub-title .green {
     gap: 30px;
     position: relative;
     z-index: 30;
+    margin-bottom: 30px;
 }
 
 input {
@@ -246,6 +247,11 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.left {
+    border-right: 2px dashed var(--primary-tran-color);
+    padding-right: 30px;
 }
 
 .profile-elements{
@@ -1023,4 +1029,5 @@ body {
 }
 .couple-hero-dropdown .hero-search {
     outline: none;
+
 }
