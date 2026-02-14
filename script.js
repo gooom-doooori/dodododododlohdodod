@@ -183,6 +183,11 @@ function addHero(heroName) {
             </div>
         ` : ''}
     `;
+
+    heroCard.querySelectorAll('img').forEach(img => {
+        img.addEventListener('contextmenu', e => e.preventDefault());
+        img.addEventListener('dragstart', e => e.preventDefault());
+    });
     
     // X 버튼 클릭 시 삭제
     heroCard.querySelector('.remove-hero-btn').addEventListener('click', () => {
