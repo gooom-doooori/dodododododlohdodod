@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     let saveCount = 0;
-    document.getElementById('saveImageBtn').addEventListener('click', function() {
+    document.getElementById('saveImageBtn').addEventListener('click', async function() {
         const card = document.querySelector('.card');
 
         // placeholder 숨기기
@@ -504,6 +504,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         const placehold = card.querySelectorAll('.placehold');
         placehold.forEach(el => el.style.visibility = 'hidden');
+
+        // 비활성 속성 버튼 흑백 처리
+        const inactiveBtns = card.querySelectorAll('.element-btn:not(.active)');
+        const btnRestoreMap = [];
+        await Promise.all([...inactiveBtns].map(btn => new Promise(resolve => {
+            const url = btn.style.backgroundImage.replace(/url\(["']?|["']?\)/g, '');
+            const img = new Image();
+            img.onload = function() {
+                const cv = document.createElement('canvas');
+                cv.width = img.width; cv.height = img.height;
+                const ctx = cv.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                const data = ctx.getImageData(0, 0, cv.width, cv.height);
+                for (let i = 0; i < data.data.length; i += 4) {
+                    const gray = data.data[i] * 0.3 + data.data[i+1] * 0.59 + data.data[i+2] * 0.11;
+                    data.data[i] = data.data[i+1] = data.data[i+2] = gray;
+                }
+                ctx.putImageData(data, 0, 0);
+                btnRestoreMap.push({ btn, original: btn.style.backgroundImage });
+                btn.style.backgroundImage = `url(${cv.toDataURL()})`;
+                resolve();
+            };
+            img.src = url;
+        })));
 
         // object-fit: cover 수동 시뮬레이션
         const profileImg = document.getElementById('profileImage');
@@ -536,6 +560,7 @@ document.addEventListener('DOMContentLoaded', function() {
             profileImg.setAttribute('style', savedStyle);
             allInputs.forEach(el => { el.placeholder = el._placeholder; });
             placehold.forEach(el => el.style.visibility = '');
+            btnRestoreMap.forEach(({ btn, original }) => { btn.style.backgroundImage = original; });
 
             saveCount++;
             const link = document.createElement('a');
