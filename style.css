@@ -228,7 +228,7 @@ body.green-theme .sub-title .green {
   position: absolute;
   inset: 0;
   height: 30px;
-  margin-top: 725px;
+  margin-top: 64.3%;
   background-color: var(--primary-color);
   border-radius: 0 0 16px 16px;
   border: 2px solid black;
@@ -1058,5 +1058,6 @@ body {
     outline: none;
 
 }
+
 
 
