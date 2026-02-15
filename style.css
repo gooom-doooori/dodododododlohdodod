@@ -76,7 +76,7 @@ body.green-theme {
     width: 1200px;
     border: 6px solid var(--point-color);
     overflow: hidden;
-    padding-bottom: 5px;
+    padding-bottom: 30px;
     margin: 20px;
     background-color: var(--bg-color);
     background-image: var(--bg-image);
@@ -1058,4 +1058,5 @@ body {
     outline: none;
 
 }
+
 
