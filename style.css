@@ -223,17 +223,16 @@ body.green-theme .sub-title .green {
     margin-bottom: 30px;
 }
 
-.content::after {
+.underdeco {
   content: '';
-  position: absolute;
   inset: 0;
   height: 30px;
-  margin-top: 64.3%;
+  top: 97.5%;
   background-color: var(--primary-color);
   border-radius: 0 0 16px 16px;
   border: 2px solid black;
   z-index: -10;
-  transform: translate(0px, 18px);
+  transform: translate(0px, -5px);
 }
 
 .deco_p {
